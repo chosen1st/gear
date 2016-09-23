@@ -1,0 +1,48 @@
+#include <iostream>  
+#include <vector>  
+#include <fstream>  
+#include <string>  
+#include <iomanip>
+using namespace std;  
+void pname(int n){
+    int count[16]={0,7,7,4,8,8,6,10,12,14,14,19,15,12,14,5};
+    int i = 1;
+    while(n>0){
+        n-=count[i];
+        i++;
+    }
+    i--;
+    n+=count[i];
+    if (i<8)
+        cout<<"LinuxCPP"<<setw(2)<<setfill('0')<<setiosflags(ios::right)<<i<<setw(2)<<setfill('0')<<setiosflags(ios::right)<<n<<".pptx";
+    else
+        cout<<"LinuxCpp__"<<setw(2)<<setfill('0')<<setiosflags(ios::right)<<i<<setw(2)<<setfill('0')<<setiosflags(ios::right)<<n<<".pptx";
+}
+int main()  
+{  
+    ifstream input;  
+    string s,filename = "D:\\Users\\Lin Ster\\Documents\\Code\\THU-LinuxCPP\\name.txt";  
+    vector<string> files;  
+    files.push_back(filename);  
+          
+    vector<string>::const_iterator it = files.begin();  
+  
+    while (it!=files.end()) {  
+                input.open(filename.c_str());  
+                if(!input)
+                    break;  
+                int n=1;
+                while(input>>s){
+                    cout<<"ren ";
+                    pname(n);
+                    cout<<' ';
+                    cout<<s<<".pptx"<<endl;
+                    n++;
+                }
+                input.close();  
+                input.clear();  
+                ++it;  
+    }  
+    return 0;
+  
+}  
