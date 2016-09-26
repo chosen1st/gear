@@ -1,1 +1,1 @@
-首先先用cpp文件生成批量的下载链接
+首先先用downloadallppt_xuetangx.cpp文件生成批量的下载链接
