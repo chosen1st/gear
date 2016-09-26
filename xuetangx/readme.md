@@ -1,1 +1,4 @@
 首先先用downloadallppt_xuetangx.cpp文件生成批量的下载链接
+然后到下载工具中批量下载结束后使用batproducer进行rn.bat的生成
+然后命令行执行
+创建文件夹见另一个BAT文件
